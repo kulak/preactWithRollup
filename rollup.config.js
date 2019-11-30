@@ -8,16 +8,16 @@ import { terser } from 'rollup-plugin-terser';
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-	input: 'src/main.ts',
+	input: 'src/index.js',
 	output: {
-		file: 'public/bundle-main.js',
+		file: 'public/bundle-app.js',
 		// immediately-invoked function expression — suitable for <script> tags
 		format: 'iife',
 		sourcemap: true,
 		// variable value 'main' is exported into Browser
-		name: 'main',
+		name: 'app',
 		// if 'named', then access from browser is based on value of name above.
-		// main.ExportedName
+		// app.ExportedName
 		exports: 'named'
 	},
 	plugins: [
