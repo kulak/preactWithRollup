@@ -1,6 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import typescript from 'rollup-plugin-typescript';
+// import typescript from 'rollup-plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
 
 // `npm run build` -> `production` is true
@@ -15,14 +15,14 @@ export default {
 		format: 'iife',
 		sourcemap: true,
 		// variable value 'main' is exported into Browser
-		name: 'app',
+		name: 'myapp',
 		// if 'named', then access from browser is based on value of name above.
 		// app.ExportedName
 		exports: 'named'
 	},
 	plugins: [
         resolve(), // tells Rollup how to find commonjs in node_modules
-        typescript({module: 'CommonJS'}),
+        // typescript({module: 'CommonJS'}),
 		commonjs({extensions: ['.js', '.ts']}), // converts commonjs to ES modules
 		production && terser() // minify, but only in production
 	]

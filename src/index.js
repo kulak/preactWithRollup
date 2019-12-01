@@ -1,8 +1,10 @@
-// import "./style/index.css";
-// import App from "./components/app.ts";
-import { render } from 'preact'
-import { html } from 'htm/preact';
+import { h, render, Component } from 'preact'
 
-const app = html`<div>foo</div>`;
-export default app
-render(app, document.getElementById('container'));
+class App extends Component {
+	render() {
+        console.warn("in render")
+        return h('h1', null, 'Hello World');
+	}
+}
+
+render(h('div', null, [new App]), document.getElementById('container'))
