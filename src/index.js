@@ -1,4 +1,8 @@
 // import "./style/index.css";
-import App from "./components/app.ts";
+// import App from "./components/app.ts";
+import { render } from 'preact'
+import { html } from 'htm/preact';
 
-export default App;
+const app = html`<div>foo</div>`;
+export default app
+render(app, document.getElementById('container'));
