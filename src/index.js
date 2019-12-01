@@ -1,10 +1,10 @@
 import { h, render, Component } from 'preact'
+import { html } from 'htm/preact'
 
 class App extends Component {
 	render() {
-        console.warn("in render")
-        return h('h1', null, 'Hello World');
+                return html `<h1>Hello, world!</h1>`
 	}
 }
 
-render(h('div', null, [new App]), document.getElementById('container'))
+render(html `<${App} />`, document.getElementById('container'))
